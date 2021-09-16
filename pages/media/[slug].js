@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
-import { MediaList } from '../components/MediaList';
-import { TopNav } from '../components/TopNav';
-import { ContentContainer } from '../components/ContentContainer';
-import { FAB } from '../components/FAB';
-import { BreadCrumbs } from '../components/BreadCrumbs';
+import { MediaList } from '../../components/MediaList';
+import { TopNav } from '../../components/TopNav';
+import { MediaPage } from '../../components/MediaPage';
+import { ContentContainer } from '../../components/ContentContainer';
+import { useRouter } from 'next/dist/client/router';
+import { FAB } from '../../components/FAB';
 
 const GlobalStyle = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
@@ -38,6 +39,14 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     line-height: 1.25;
   }
+  a {
+    color: #bf9e5f;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   img {
     border: 0px;
     width: 100%;
@@ -47,29 +56,29 @@ const GlobalStyle = createGlobalStyle`
     all: unset;
   }
 
+  a:active, a:visited, a:any-link, a:hover {
+    text-decoration: none;
+  }
+
+
   button{
     all: unset;
   }
 `;
 
-const Container = styled.div`
-  max-width: 500px;
-  margin: 0 auto;
-  background: var(--grey100);
-  height: auto;
-  min-height: 926px;
-  `;
-
-export default function Home() {
+export default function Media() {
+  const router = useRouter()
+  const title = router.query.title;
+  const hashID = router.query.hashID;
   return (
     <>
       <Head>
-        <title>Mobile Wistia</title>
+        <title>{router.query.title}</title>
       </Head>
       <ContentContainer>
         <GlobalStyle />
         <TopNav />
-        <MediaList />
+        <MediaPage title={title} hashID={hashID}/>
         <FAB />
       </ContentContainer>
     </>

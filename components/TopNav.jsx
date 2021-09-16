@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import wistiaLogo from '../public/wistia-logo.svg';
 import ellipsisIcon from '../public/Icons/Ellipsis.svg';
-import menuIcon from '../public/Icons/Menu.svg';
 import { IconButton } from './IconButton';
 import { useState } from 'react';
 import { SideNav } from './SideNav';
-import { Drawer } from '@mui/material';
+import { MainNav, Mainnav } from './MainNav';
 
 const Container = styled.div`
   background: white;
@@ -28,6 +27,15 @@ const Logo = styled.div`
   height: auto;
 `;
 
+const CloseButton = styled.button`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+`;
+
+const SideNavContainer = styled;
+
 export function TopNav() {
   const [sideNavOpen, setSideNavOpen] = useState(false);
 
@@ -42,12 +50,11 @@ export function TopNav() {
 
   return (
     <Container>
-      <IconButton icon={menuIcon} onClick={openModal} />
-      {sideNavOpen && <Drawer />}
+      <SideNav />
       <Logo>
         <Image src={wistiaLogo} />
       </Logo>
-      <IconButton icon={ellipsisIcon} />
+      <MainNav />
     </Container>
   );
 }

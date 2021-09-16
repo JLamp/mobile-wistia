@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     --grey700: #62626c;
     --grey100: #F8F8F9;
     --green500: #00c185;
+    --brandBlue100: #e9f5ff;
     --brandBlue500: #1e64f0;
     --elevation3: 0 8px 16px rgba(0, 0, 0, 0.05);
   }

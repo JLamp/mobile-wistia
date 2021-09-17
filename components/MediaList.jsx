@@ -5,7 +5,7 @@ import { PageHeader } from './PageHeader';
 import { Section } from './Section';
 
 const Container = styled.div`
-  padding: 8px 16px 16px 16px;
+  padding: 0 16px 16px 16px;
 `;
 
 export function MediaList() {

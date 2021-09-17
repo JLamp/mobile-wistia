@@ -12,7 +12,7 @@ const DummyPlayer = styled.img`
 `;
 
 const Container = styled.div`
-  padding: 8px 16px 16px 16px;
+  padding: 0 16px 16px 16px;
 `;
 
 const PlayerWrapper = styled.div`

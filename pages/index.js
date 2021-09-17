@@ -7,7 +7,7 @@ import { FAB } from '../components/FAB';
 import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
   * {
   box-sizing: border-box;
@@ -25,8 +25,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    // font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    // Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Inter', serif;
     font-size: 16px;
     font-weight: normal;
     letter-spacing: .03rem;
@@ -66,6 +67,7 @@ export default function Home() {
     <>
       <Head>
         <title>Mobile Wistia</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
       <ContentContainer>
         <GlobalStyle />

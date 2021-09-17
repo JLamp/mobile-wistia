@@ -8,7 +8,7 @@ import { useRouter } from 'next/dist/client/router';
 import { FAB } from '../../components/FAB';
 
 const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
   * {
   box-sizing: border-box;
@@ -75,6 +75,7 @@ export default function Media() {
     <>
       <Head>
         <title>{router.query.title}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
       <ContentContainer>
         <GlobalStyle />

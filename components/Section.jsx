@@ -5,6 +5,7 @@ import downIcon from '../public/Icons/Down.svg';
 import ellipsisIcon from '../public/Icons/Ellipsis.svg';
 import Image from 'next/image';
 import { useState } from 'react';
+import { EditSectionButton } from './EditSectionButton';
 
 const SectionHeader = styled.div`
   display: flex;
@@ -42,7 +43,7 @@ export function Section({ section }) {
           <Caret src={downIcon} width={16} height={16} rotate={!visible} />
           <span style={{ marginLeft: '8px' }}>{section.sectionTitle}</span>
         </SectionTitle>
-        <IconButton icon={ellipsisIcon} size={16} align="right" />
+        <EditSectionButton />
       </SectionHeader>
       {visible && (
         <MediasList>

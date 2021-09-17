@@ -3,6 +3,7 @@ import { PageHeader } from './PageHeader';
 import { ContentContainer } from './ContentContainer';
 import { BreadCrumbs } from './BreadCrumbs';
 import { FAB } from './FAB';
+import { Comments } from './Comments';
 import ReactPlayer from 'react-player';
 
 const DummyPlayer = styled.img`
@@ -37,6 +38,7 @@ export function MediaPage({ title, hashID }) {
       <PlayerWrapper>
         <Player url={url} width="100%" height="100%" />
       </PlayerWrapper>
+      <Comments />
       <FAB icon="embed" />
     </Container>
   );

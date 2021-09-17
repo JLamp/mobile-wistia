@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { IconButton } from './IconButton';
 import pencilIcon from '../public/Icons/Pencil.svg';
+import Image from 'next/image';
+import favoriteIcon from '../public/Icons/Favorite.svg';
 
 const Container = styled.div`
   display: flex;
@@ -39,10 +41,11 @@ const Description = styled.span`
   line-height: 1.4;
 `;
 
-export function PageHeader({ title, description }) {
+export function PageHeader({ title, description, favorite }) {
   return (
     <Container>
       <TitleGroup>
+        {favorite && <Image src={favoriteIcon} width={16} height={16} />}
         <Title>{title}</Title>
         <IconButton icon={pencilIcon} size={16} align="right" />
       </TitleGroup>

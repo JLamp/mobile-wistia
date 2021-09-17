@@ -34,7 +34,7 @@ export function MediaPage({ title, hashID }) {
   return (
     <Container>
       <BreadCrumbs project={true} />
-      <PageHeader title={title} description={null} />
+      <PageHeader title={title} description={null} favorite={false} />
       <PlayerWrapper>
         <Player url={url} width="100%" height="100%" />
       </PlayerWrapper>

@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { IconButton } from './IconButton';
 import Image from 'next/image';
 import { List } from './List';
+import { ActionMenu } from './ActionMenu';
+import { SectionActions } from '../constants/SectionIcons';
 
 export function EditSectionButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +32,7 @@ export function EditSectionButton() {
         variant={'temporary'}
         onClose={closeMenu}
       >
-        <List actions={['Rename', 'Delete']} />
+        <ActionMenu actions={SectionActions} />
       </Drawer>
     </>
   );

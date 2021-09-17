@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import plusIcon from '../public/Icons/Plus.svg';
-import embedIcon from '../public/Icons/Embed.svg';
-import { Drawer, List, ListItem, ListItemIcon, SvgIcon } from '@mui/material';
+import { Drawer } from '@mui/material';
 import { useState } from 'react';
-import { IconButton } from './IconButton';
+import { ActionMenu } from './ActionMenu';
+import { AddActions } from '../constants/AddActions';
+import addIcon from '../public/Icons/Plus.svg';
 
 const ActionButtonContainer = styled.button`
   border-radius: 100%;
@@ -20,30 +20,6 @@ const ActionButtonContainer = styled.button`
   box-shadow: var(--elevation3);
 `;
 
-const MenuItem = styled(ListItem)`
-  height: 48px;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-`;
-
-const IconContainer = styled.div`
-  width: 16px;
-  height: 16px;
-`;
-
-function getIcon(icon) {
-  if (icon === 'embed') {
-    return embedIcon;
-  }
-
-  return plusIcon;
-}
-
 export function FAB({ icon, actions }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,12 +30,10 @@ export function FAB({ icon, actions }) {
   function closeMenu() {
     setIsOpen(false);
   }
-  const ICON = getIcon(icon);
-  console.log(plusIcon);
   return (
     <>
       <ActionButtonContainer onClick={openMenu}>
-        <Image src={ICON} width={32} height={32} />
+        <Image src={addIcon} width={32} height={32} />
       </ActionButtonContainer>
       <Drawer
         anchor={'bottom'}
@@ -67,10 +41,7 @@ export function FAB({ icon, actions }) {
         variant={'temporary'}
         onClose={closeMenu}
       >
-        <List>
-          <MenuItem>Upload</MenuItem>
-          <MenuItem>Add from Wistia</MenuItem>
-        </List>
+        <ActionMenu actions={AddActions} />
       </Drawer>
     </>
   );

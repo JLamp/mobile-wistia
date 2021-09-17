@@ -1,38 +1,17 @@
 import styled from 'styled-components';
 import { IconButton } from './IconButton';
 import closeIcon from '../public/Icons/Close.svg';
+import downIcon from '../public/Icons/Down-Dark.svg';
 import { Drawer } from '@mui/material';
 import { useState } from 'react';
 import menuIcon from '../public/Icons/Menu.svg';
-
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-`;
+import Image from 'next/image';
 
 const Container = styled.div`
   padding: 24px 16px;
-  width: 288px;
+  width: 100%;
   color: var(--grey900);
   font-weight: 500;
-`;
-
-const SideNavTitleContainer = styled.div`
-  width: 100%;
-  padding-left: 16px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const SideNavTitle = styled.div`
-  font-size: 24px;
-  font-weight: 700;
 `;
 
 const SideNavItem = styled.div`
@@ -50,7 +29,23 @@ const SideNavItem = styled.div`
   }
 `;
 
-export function SideNav() {
+const ButtonContainer = styled.button`
+  display: flex;
+  align-items: center;
+  height: 48px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+`;
+
+const Divider = styled.div`
+  height: 4px;
+  background-color: #f8f8f9;
+  width: 100%;
+  margin: 8px 0;
+`;
+
+export function SideNavBottom({ project }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function openDrawer() {
@@ -64,34 +59,51 @@ export function SideNav() {
   const ProjectItems = [
     'Media',
     'Permissions',
-    '-',
+    '',
     'Project Analytics',
-    '-',
+    '',
     'Move & Copy',
     'Export All Media',
-    '-',
+    '',
     'Delete Project',
   ];
 
+  const MediaItems = [
+    'Overview',
+    'Customize',
+    'Stats',
+    '',
+    'Create an A/B Test',
+    'Replace Media',
+    'Download',
+    'Set Project Defaults',
+    'Delete',
+  ];
+
+  const ListItems = project ? ProjectItems : MediaItems;
+
   return (
     <>
-      <IconButton icon={menuIcon} onClick={openDrawer} />
+      <ButtonContainer onClick={openDrawer}>
+        <span style={{ marginRight: '4px' }}>
+          {project ? 'Media' : 'Overview'}
+        </span>
+        <Image src={downIcon} width={12} height={12} />
+      </ButtonContainer>
       <Drawer
         open={isOpen}
-        anchor="left"
+        anchor="bottom"
         variant="temporary"
         onClose={closeDrawer}
       >
         <Container>
-          <SideNavTitleContainer>
-            <SideNavTitle>Project</SideNavTitle>
-            <IconButton icon={closeIcon} size={24} onClick={closeDrawer} />
-          </SideNavTitleContainer>
-          <div>
-            {ProjectItems.map((item) => (
+          {ListItems.map((item) =>
+            item.length > 0 ? (
               <SideNavItem key={item}>{item}</SideNavItem>
-            ))}
-          </div>
+            ) : (
+              <Divider />
+            )
+          )}
         </Container>
       </Drawer>
     </>

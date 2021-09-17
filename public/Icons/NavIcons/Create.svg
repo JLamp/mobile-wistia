@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>NavIcons/Content/Create</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.117647 0 0 0 0 0.392157 0 0 0 0 0.941176 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="---Responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="NavIcons/Content/Create">
+            <g filter="url(#filter-1)" id="Icon-Background">
+                <g>
+                    <rect id="Rectangle" fill="#E2EFFD" x="0" y="0" width="32" height="32" rx="4"></rect>
+                </g>
+            </g>
+            <g id="Icon" transform="translate(4.000000, 4.000000)" filter="url(#filter-2)">
+                <g id="16x16-Add" transform="translate(4.000000, 4.000000)" fill="#62626C">
+                    <path d="M6.71727858,1.28272656 C6.71727858,0.574302337 7.29156579,0 8,0 C8.70842139,0 9.28272142,0.574302337 9.28272142,1.28272656 L9.28272142,6.71729268 L14.7172786,6.71729268 C15.4257256,6.71729268 16,7.29158219 16,8.00001924 C16,8.70844347 15.4257256,9.2827458 14.7172786,9.2827458 L9.28272142,9.2827458 L9.28272142,14.7172734 C9.28272142,15.4257233 8.70842139,16 8,16 C7.29156579,16 6.71727858,15.4257233 6.71727858,14.7172734 L6.71727858,9.2827458 L1.28272142,9.2827458 C0.574287208,9.2827458 0,8.70844347 0,8.00001924 C0,7.29158219 0.574287208,6.71729268 1.28272142,6.71729268 L6.71727858,6.71729268 L6.71727858,1.28272656 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

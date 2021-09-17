@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import plusIcon from '../public/Icons/Plus.svg';
 import embedIcon from '../public/Icons/Embed.svg';
-import { Drawer, List, ListItem } from '@mui/material';
+import { Drawer, List, ListItem, ListItemIcon, SvgIcon } from '@mui/material';
 import { useState } from 'react';
+import { IconButton } from './IconButton';
 
 const ActionButtonContainer = styled.button`
   border-radius: 100%;
@@ -30,6 +31,11 @@ const MenuItem = styled(ListItem)`
   border-radius: 8px;
 `;
 
+const IconContainer = styled.div`
+  width: 16px;
+  height: 16px;
+`;
+
 function getIcon(icon) {
   if (icon === 'embed') {
     return embedIcon;
@@ -49,6 +55,7 @@ export function FAB({ icon, actions }) {
     setIsOpen(false);
   }
   const ICON = getIcon(icon);
+  console.log(plusIcon);
   return (
     <>
       <ActionButtonContainer onClick={openMenu}>

@@ -5,7 +5,8 @@ import ellipsisIcon from '../public/Icons/Ellipsis.svg';
 import { IconButton } from './IconButton';
 import { useState } from 'react';
 import { SideNav } from './SideNav';
-import { MainNav, Mainnav } from './MainNav';
+import { MainNav } from './MainNav';
+import searchIcon from '../public/Icons/Search.svg';
 
 const Container = styled.div`
   background: white;
@@ -25,6 +26,7 @@ const Logo = styled.div`
   width: auto;
   max-height: 24px;
   height: auto;
+  margin-left: 8px;
 `;
 
 const CloseButton = styled.button`
@@ -50,11 +52,11 @@ export function TopNav() {
 
   return (
     <Container>
-      <SideNav />
+      <MainNav />
       <Logo>
         <Image src={wistiaLogo} />
       </Logo>
-      <MainNav />
+      <IconButton icon={searchIcon} />
     </Container>
   );
 }

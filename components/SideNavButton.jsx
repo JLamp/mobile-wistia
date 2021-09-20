@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { IconButton } from './IconButton';
-import closeIcon from '../public/Icons/Close.svg';
-import downIcon from '../public/Icons/Down-Dark.svg';
+import leftArrow from '../public/Icons/Icon-Left.svg';
 import { Drawer } from '@mui/material';
 import { useState } from 'react';
 import menuIcon from '../public/Icons/Menu.svg';
 import Image from 'next/image';
+import kebabIcon from '../public/Icons/Kebab.svg';
 
 const Container = styled.div`
-  padding: 24px 16px;
+  padding: 8px 16px 24px 16px;
   width: 100%;
   color: var(--grey900);
   font-weight: 500;
@@ -23,19 +22,19 @@ const SideNavItem = styled.div`
   display: flex;
   align-items: center;
   border-radius: 8px;
-  &:first-child {
+  &:nth-child(2) {
     background-color: var(--brandBlue100);
     color: var(--brandBlue500);
   }
 `;
 
-const ButtonContainer = styled.button`
+const ButtonContainer = styled.a`
   display: flex;
   align-items: center;
   height: 48px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
 `;
 
 const Divider = styled.div`
@@ -45,7 +44,7 @@ const Divider = styled.div`
   margin: 8px 0;
 `;
 
-export function SideNavBottom({ project }) {
+export function SideNavButton({ project }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function openDrawer() {
@@ -85,10 +84,10 @@ export function SideNavBottom({ project }) {
   return (
     <>
       <ButtonContainer onClick={openDrawer}>
-        <span style={{ marginRight: '4px' }}>
+        <Image src={kebabIcon} width={16} height={16} />
+        <span style={{ marginLeft: '8px' }}>
           {project ? 'Media' : 'Overview'}
         </span>
-        <Image src={downIcon} width={12} height={12} />
       </ButtonContainer>
       <Drawer
         open={isOpen}
@@ -97,6 +96,21 @@ export function SideNavBottom({ project }) {
         onClose={closeDrawer}
       >
         <Container>
+          <SideNavItem>
+            <ButtonContainer href="/">
+              <Image src={leftArrow} width={16} height={16} />
+              <span
+                style={{
+                  marginLeft: '8px',
+                  fontSize: '12px',
+                  textTransform: 'uppercase',
+                  fontWeight: '700',
+                }}
+              >
+                Back to {project ? 'All Content' : "Wistia's Greatest Hits"}
+              </span>
+            </ButtonContainer>
+          </SideNavItem>
           {ListItems.map((item) =>
             item.length > 0 ? (
               <SideNavItem key={item}>{item}</SideNavItem>
@@ -109,3 +123,7 @@ export function SideNavBottom({ project }) {
     </>
   );
 }
+
+SideNavButton.defaultProps = {
+  project: true,
+};

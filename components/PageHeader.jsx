@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { IconButton } from './IconButton';
-import pencilIcon from '../public/Icons/Pencil.svg';
 import Image from 'next/image';
 import favoriteIcon from '../public/Icons/Favorite.svg';
+import { EditButton } from './EditButton';
 
 const Container = styled.div`
   display: flex;
@@ -29,10 +28,16 @@ const TitleGroup = styled.div`
   align-items: center;
 `;
 
+const IconContainer = styled.div`
+  margin-right: 8px;
+`;
+
 const Title = styled.span`
   font-size: 24px;
   font-weight: 700;
   line-height: 1.25;
+  align-self: left;
+  flex-grow: 2;
 `;
 
 const Description = styled.span`
@@ -45,11 +50,14 @@ export function PageHeader({ title, description, favorite }) {
   return (
     <Container>
       <TitleGroup>
-        {favorite && <Image src={favoriteIcon} width={16} height={16} />}
+        {favorite && (
+          <IconContainer>
+            <Image src={favoriteIcon} width={16} height={16} />
+          </IconContainer>
+        )}
         <Title>{title}</Title>
-        <IconButton icon={pencilIcon} size={16} align="right" />
+        <EditButton title={title} description={description} />
       </TitleGroup>
-
       <Description>{description}</Description>
     </Container>
   );

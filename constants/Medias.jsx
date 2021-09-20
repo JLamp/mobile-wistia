@@ -7,6 +7,8 @@ export const Medias = [
         slug: 'save-the-date',
         thumbnail: 'Save-the-Date.jpg',
         title: 'Save the Date',
+        description:
+          'Ahh, the infamous Wistiafest video. Remember when we said some were weird? Well we are going to start there.',
         duration: '2:05',
         created: '3 years ago',
         comments: '2',
@@ -17,6 +19,7 @@ export const Medias = [
         slug: 'wistia-for-chrome',
         thumbnail: 'Wistia-for-Chrome.jpg',
         title: 'Wistia for Chrome',
+        description: '... no comment',
         duration: '1:06',
         created: '3 years ago',
         comments: '3',

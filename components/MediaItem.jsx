@@ -1,14 +1,6 @@
-import styled, { css } from 'styled-components';
-import { IconButton } from './IconButton';
-import ellipsisIcon from '../public/Icons/Ellipsis.svg';
-import selectIcon from '../public/Icons/Select.svg';
-import Image from 'next/image';
+import styled from 'styled-components';
 import Link from 'next/link';
-
-const AddDivider = css`
-  padding: 16px 0;
-  border-bottom: solid 1px #dedee1;
-`;
+import { MediaItemButton } from './MediaItemButton';
 
 const Container = styled.div`
   width: 100%;
@@ -87,7 +79,12 @@ export function MediaItem({ media }) {
       <Link
         href={{
           pathname: `/media/[slug]`,
-          query: { slug: media.slug, title: media.title, hashID: media.hashID },
+          query: {
+            slug: media.slug,
+            title: media.title,
+            description: media.description,
+            hashID: media.hashID,
+          },
         }}
       >
         <Info>
@@ -97,7 +94,7 @@ export function MediaItem({ media }) {
           </MetaData>
         </Info>
       </Link>
-      {/* <IconButton icon={ellipsisIcon} size={16} align="right" /> */}
+      <MediaItemButton />
     </Container>
   );
 }

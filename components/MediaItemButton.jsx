@@ -3,10 +3,9 @@ import ellipsisIcon from '../public/Icons/Ellipsis.svg';
 import { useState } from 'react';
 import { IconButton } from './IconButton';
 import { ActionMenu } from './ActionMenu';
-import { SectionActions } from '../constants/SectionIcons';
-import searchIcon from '../public/Icons/Search.svg';
+import { MediaItemActions } from '../constants/MediaItemActions';
 
-export function EditSectionButton() {
+export function MediaItemButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   function openMenu() {
@@ -30,7 +29,7 @@ export function EditSectionButton() {
         variant={'temporary'}
         onClose={closeMenu}
       >
-        <ActionMenu actions={SectionActions} />
+        <ActionMenu actions={MediaItemActions} />
       </Drawer>
     </>
   );

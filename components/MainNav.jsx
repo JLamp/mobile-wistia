@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 import { IconButton } from './IconButton';
-import ellipsisIcon from '../public/Icons/Ellipsis.svg';
 import { Drawer } from '@mui/material';
 import { useState } from 'react';
-// import { List } from './List';
-import { List, ListItem, ListSubheader } from '@mui/material';
+import { List } from '@mui/material';
 import { NavItems } from '../constants/NavItems';
-import Image from 'next/image';
 import menuIcon from '../public/Icons/Menu.svg';
 
 const NavContainer = styled.div`

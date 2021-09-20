@@ -11,8 +11,8 @@ const Container = styled.div`
 export function MediaList() {
   return (
     <Container>
-      <BreadCrumbs project={false} />
-      <PageHeader />
+      <BreadCrumbs project={true} />
+      <PageHeader favorite={true} />
       {Medias.map((section) => (
         <Section key={section.sectionTitle} section={section} />
       ))}

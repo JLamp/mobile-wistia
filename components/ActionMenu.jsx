@@ -29,7 +29,7 @@ const Spacer = styled.div`
   width: 100%;
 `;
 
-export function ActionMenu({ actions }) {
+export function ActionMenu({ actions, append }) {
   return (
     <List>
       {actions.map((item) => (
@@ -44,6 +44,7 @@ export function ActionMenu({ actions }) {
           {item.text}
         </MenuItem>
       ))}
+      {append}
       <MenuItem style={{ height: '24px' }}>
         <Spacer />
       </MenuItem>

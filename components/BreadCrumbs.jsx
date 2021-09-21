@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SideNavButton } from './SideNavButton';
 import { PrimaryActionButton } from './PrimaryActionButton';
-import addIcon from '../public/Icons/Add.svg';
+import addIcon from '../public/Icons/Plus.svg';
 import { AddActions } from '../constants/AddActions';
 import embedIcon from '../public/Icons/Embed.svg';
 

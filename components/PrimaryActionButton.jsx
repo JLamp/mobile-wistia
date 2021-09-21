@@ -12,12 +12,12 @@ const ButtonContainer = styled.button`
 `;
 
 const Button = styled.span`
-  background: var(--brandBlue100);
+  background: var(--brandBlue500);
   padding: 8px 12px;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  color: #09217d;
+  color: white;
   line-height: 16px;
   font-weight: 500;
   ${(props) => (props.variant === 'secondary' ? SecondaryStyles : null)}

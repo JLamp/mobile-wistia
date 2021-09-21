@@ -44,6 +44,7 @@ const PrimaryButton = styled.button`
   font-weight: 500;
   align-items: center;
   width: max-content;
+  opacity: 50%;
   // align-self: flex-end;
 `;
 

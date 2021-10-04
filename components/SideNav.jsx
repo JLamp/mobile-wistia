@@ -76,7 +76,12 @@ export function SideNav() {
   return (
     <>
       <IconButton icon={menuIcon} onClick={openDrawer} />
-      <Drawer open={isOpen} variant="temporary" onClose={closeDrawer}>
+      <Drawer
+        open={isOpen}
+        anchor="left"
+        variant="temporary"
+        onClose={closeDrawer}
+      >
         <Container>
           <SideNavTitleContainer>
             <SideNavTitle>Project</SideNavTitle>

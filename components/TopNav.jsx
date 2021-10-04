@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import wistiaLogo from '../public/wistia-logo.svg';
-import ellipsisIcon from '../public/Icons/Ellipsis.svg';
-import { IconButton } from './IconButton';
-import { useState } from 'react';
-import { SideNav } from './SideNav';
-import { MainNav, Mainnav } from './MainNav';
+import { MainNav } from './MainNav';
+import { SearchButton } from './SearchButton';
 
 const Container = styled.div`
   background: white;
@@ -25,36 +22,17 @@ const Logo = styled.div`
   width: auto;
   max-height: 24px;
   height: auto;
+  margin-left: 8px;
 `;
-
-const CloseButton = styled.button`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-`;
-
-const SideNavContainer = styled;
 
 export function TopNav() {
-  const [sideNavOpen, setSideNavOpen] = useState(false);
-
-  function openModal() {
-    setSideNavOpen(true);
-    console.log('Clicked!');
-  }
-
-  function closeModal() {
-    setSideNavOpen(false);
-  }
-
   return (
     <Container>
-      <SideNav />
+      <MainNav />
       <Logo>
         <Image src={wistiaLogo} />
       </Logo>
-      <MainNav />
+      <SearchButton />
     </Container>
   );
 }

@@ -41,8 +41,8 @@ class MyDocument extends Document {
             content={theme.palette.primary.main}
           />
           <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Head>
         <body>

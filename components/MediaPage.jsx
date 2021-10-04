@@ -12,11 +12,11 @@ const DummyPlayer = styled.img`
 `;
 
 const Container = styled.div`
-  padding: 8px 16px 16px 16px;
+  padding: 0 16px 16px 16px;
 `;
 
 const PlayerWrapper = styled.div`
-  margin-top: 8px;
+  margin-top: 16px;
   position: relative;
   padding-top: 56.25%;
 `;
@@ -27,19 +27,19 @@ const Player = styled(ReactPlayer)`
   left: 0;
 `;
 
-export function MediaPage({ title, hashID }) {
+export function MediaPage({ title, description, hashID }) {
   console.log('HashID = ' + hashID);
   const url = 'https://crlvideo.wistia.com/medias/' + hashID;
   console.log('URL = ' + url);
   return (
     <Container>
-      <BreadCrumbs project={true} />
-      <PageHeader title={title} description={null} />
+      <BreadCrumbs project={false} embed={true} />
+      <PageHeader title={title} description={description} favorite={false} />
       <PlayerWrapper>
         <Player url={url} width="100%" height="100%" />
       </PlayerWrapper>
       <Comments />
-      <FAB icon="embed" />
+      {/* <FAB icon="embed" /> */}
     </Container>
   );
 }
